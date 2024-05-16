@@ -5,7 +5,7 @@ alert("Hola mundo");
 
 let mensaje=document.getElementById('respuesta');
 
-function callApiRequest() {
+function callApiRequest(estatus) {
   // Hacer una petición para un usuario con ID especifico
   axios
     .get(
@@ -28,7 +28,7 @@ function callApiRequest() {
       ? "DERECHA": "DETENER";
 
 
-      respuesta.innerHTML="Respuesta:" + respuestaServidor ;
+      respuesta.innerHTML="Respuesta: <strong>" + respuestaServidor + "</strong>" ;
     })
     .catch(function (error) {
       // manejar error
