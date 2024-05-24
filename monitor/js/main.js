@@ -2,7 +2,7 @@ alert("Hola mundo");
 
 let mensaje=document.getElementById('respuesta');
 
-function callApiRequest() {
+function CallApiRequest() {
   // Hacer una petición para un usuario con ID especifico
   axios
     .get(
@@ -36,7 +36,7 @@ function callApiRequest() {
     });
   }
 
-  setInterval(callApiRequest, 2000);
+  setInterval(CallApiRequest, 2000);
     
 
     
