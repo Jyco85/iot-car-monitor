@@ -2,7 +2,7 @@ alert("Hola mundo");
 
 let mensaje=document.getElementById('respuesta');
 
-function CallApiRequest() {
+function CallApiRequest(estatus) {
   // Hacer una petición para un usuario con ID especifico
   axios
     .get(
