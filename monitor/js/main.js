@@ -1,46 +1,35 @@
-
-
 alert("Hola mundo");
 
+let respuesta=document.getElementById("respuesta");
 
 
+// Función para llamar a la API
 
-let mensaje=document.getElementById('respuesta');
-
-function callApiRequest() {
-  // Hacer una petición para un usuario con ID especifico
-  axios
-    .get(
-      "http://3.23.103.41/iot-car-control/back-end/apis/getRegistro.php" )
+function CallApiRequest(estatus)
+{
+    // Hacer una petición para un usuario con ID especifico
+    axios.get('https://3.23.103.41/iot-car-control/back-end/apis/getRegistro.php')
     .then(function (response) {
-      // manejar respuesta exitosa
-      console.log(response);
-
-      let respuestaServidor = 
-      response.data == "F"
-      ? "ADELANTE"
-
-    :response.data == "B"
-      ? "ATRAS"
-
-     : response.data == "R"
-      ? "IZQUIERDA"
-
-      :response.data == "L"
-      ? "DERECHA": "DETENER";
-
-
-      respuesta.innerHTML="Respuesta:" + respuestaServidor ;
+    // manejar respuesta exitosa
+    console.log(response);
+    
+    let respuestaaServidor = response.data == 'R'?"Izquierda":response.data == 'B'?"Atras":response.data == 'L'?"Derecha":
+    response.data == 'F'?"Adelante": "Detener";
+    respuesta.innerHTML="Respuesta: " + respuestaaServidor;
     })
     .catch(function (error) {
-      // manejar error
-      console.log(error);
+    // manejar error
+    console.log(error);
     })
     .finally(function () {
-      // siempre sera executado
+    // siempre sera executado
     });
-  }
+}
 
-  setInterval(callApiRequest, 2000);
+setInterval(CallApiRequest, 2000);
+
+
+
+
 
     
