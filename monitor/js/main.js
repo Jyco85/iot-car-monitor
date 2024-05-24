@@ -2,11 +2,11 @@ alert("Hola mundo");
 
 let mensaje=document.getElementById('respuesta');
 
-function callApiRequest() {
+function callApiRequest(estatus) {
   // Hacer una petición para un usuario con ID especifico
   axios
     .get(
-      "http://3.23.103.41/iot-car-control/back-end/apis/getRegistro.php?valorEstatus=" )
+      "http://3.23.103.41/iot-car-control/back-end/apis/getRegistro.php" )
     .then(function (response) {
       // manejar respuesta exitosa
       console.log(response);
