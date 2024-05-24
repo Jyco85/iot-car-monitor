@@ -1,11 +1,8 @@
 alert("Hola mundo");
 
-
-
-
 let mensaje=document.getElementById('respuesta');
 
-function callApiRequest(estatus) {
+function callApiRequest() {
   // Hacer una petición para un usuario con ID especifico
   axios
     .get(
